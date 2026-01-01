@@ -4,7 +4,7 @@
 [![Paper](https://img.shields.io/badge/Paper-PDF-red)](./paper.pdf) 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-> **Note:** The full manuscript is currently under review. You can download the preprint [here](./paper.pdf).
+> **Note:** The full manuscript is currently under review. You can download the preprint [here](./fgancd.pdf).
 
 ## 📖 Abstract
 
