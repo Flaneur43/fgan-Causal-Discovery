@@ -76,6 +76,8 @@ We evaluated the method on synthetic datasets with linear SEMs and unmeasured co
 | **fGAN-CD (Ours)** | **2.17** | **0.909** | **0.667** |
 
 ### Independence Test
-In scenarios with dense confounding (e.g., bow structures), fGAN-CD correctly identifies conditional independencies (separating nodes 0 and 3) where baselines often fail.
-
+We designed a high confounding scenario with ground truth: Directed edges $D = \{(0,2\}$ and Bidirected edges $B = \{(0,1),(1,2),(1,3),(2,3)\}$.  
+In the ground truth graph, Node $0$ and Node $3$ are d-separated. So there should be no edges in the PAGs of the learned graphs. We use this as a sanity check.
+As shown in Figure 1, the baseline ABIC incorrectly inferred a connection between nodes 0 and 3. The fGAN-CD method, however, correctly identifies that no edge exists between nodes 0 and 3 and recovers the true PAG.
+![alt text][./caseB.png]
 *See the [Full Paper](./fganxd.pdf) for detailed experimental setup and results.*
