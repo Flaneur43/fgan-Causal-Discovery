@@ -61,7 +61,7 @@ The model distribution generation process is as follows:
 
 2. **Parameter Prior Sampling**: Randomly sample specific weights $B', \Sigma'$ from a uniform distribution (this corresponds to the parameter integration in the model likelihood).
 
-3. **Masking**: Use $S_B, S_\Sigma$ to select edges with weights. $B^*=S_B \circle B', \Sigma^*=S_\Sigma \circle \Sigma'$
+3. **Masking**: Use $S_B, S_\Sigma$ to select edges with weights. $B^* = S_B \circ B', \Sigma^* =S_\Sigma \circ \Sigma'$
 
 4. **Data Generation**: Generate $X_{fake}$ using the linear SEM model $X=E(I-B^*)^{-1}$.
 
