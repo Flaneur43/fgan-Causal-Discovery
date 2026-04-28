@@ -367,20 +367,8 @@ def compute_pag_metrics(true_pag, est_pag):
     shd = 0
     for i in range(p):
         for j in range(i + 1, p):
-            has_edge_true = (true_adj[i, j] != 0)
-            has_edge_est = (est_adj[i, j] != 0)
-
-            if has_edge_true != has_edge_est:
-                # 骨架错误 (多边或少边)
-                shd += 1.5
-            elif has_edge_true and has_edge_est:
-                # 骨架正确，检查方向 (两个端点)
-                # 检查 i 端的标记
-                if true_adj[j, i] != est_adj[j, i]:
-                    shd += 0.5
-                # 检查 j 端的标记
-                if true_adj[i, j] != est_adj[i, j]:
-                    shd += 0.5
+            diff = (true_adj[i,j]!=est_adj[i,j])or(true_adj[j,i]!=est_adj[j,i])
+            if diff: shd+=1.0
 
     return {
         "shd": int(shd) if shd.is_integer() else shd,
