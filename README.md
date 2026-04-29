@@ -89,3 +89,12 @@ In the ground truth graph, Node $0$ and Node $3$ are d-separated. So there shoul
 As shown in Figure 1, the baseline ABIC incorrectly inferred a connection between nodes 0 and 3. The fGAN-CD method, however, correctly identifies that no edge exists between nodes 0 and 3 and recovers the true PAG.
 ![alt text](./caseB.png)
 *See the [Full Paper](./fganxd.pdf) for detailed experimental setup and results.*
+
+## Example Experiment
+In `scripts/run_experiment.py`, you can run the following example for structure estimation:
+
+- Directed edges:  '[(0,2)]'
+- Bidirected edges: '[(0,1), (1,2), (1,3), (2,3)]'
+
+This script generates synthetic data from the corresponding linear SEM and then estimates both the directed graph structure and the bidirected noise structure using the proposed Gumbel-GAN method.
+
